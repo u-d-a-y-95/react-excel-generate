@@ -16,7 +16,9 @@
                 {
                   name:String,
                   rows:[
-                  {
+                  [
+                    rowNumber :Number
+                    cells:[{
                     text:"",
                     bold:boolean,
                     itatlic:boolean,
@@ -30,7 +32,9 @@
                     alignment:enums
                     cellRange:String // "A1:A3"
                     merge:boolean
-                  }
+                  }]
+                  
+                  ]
                 ],
                 }
               ]
