@@ -1,0 +1,37 @@
+
+
+** generate excel report ** 
+
+  generateExcel = rows =>{
+    // return a excel file
+
+  }
+
+  rows format : 
+            {
+              name:String,
+              creator:String,
+              createTime:Date
+              sheets :[
+                {
+                  name:String,
+                  rows:[
+                  {
+                    text:"",
+                    bold:boolean,
+                    itatlic:boolean,
+                    underline:boolean,
+                    font:string,
+                    textFomat:enums
+                    fontSize:number
+                    textColor:"string"
+                    bgColor:"string,
+                    border:enums,
+                    alignment:enums
+                    cellRange:String // "A1:A3"
+                    merge:boolean
+                  }
+                ],
+                }
+              ]
+            }
