@@ -14,7 +14,7 @@ export const createFile = excel => {
   excel?.sheets?.forEach(sheet => {
     //create worksheet
     const _sheet = workbook.addWorksheet(sheet?.name ?? '', {
-      views: [{ showGridLines: sheet?.gridLine }]
+      views: [{ showGridLines: sheet?.gridLine || true }]
     });
 
     // generate rows

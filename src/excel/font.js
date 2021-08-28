@@ -1,7 +1,7 @@
 export const getfontStyle = cell => {
   return {
     // name: row[cellIndex]?.fontFamily,
-    size: cell?.fontSize || 10,
+    size: cell?.fontSize || 9,
     bold: cell?.bold || false,
     underline: cell?.underline || false,
     italic: cell?.italic || false,
