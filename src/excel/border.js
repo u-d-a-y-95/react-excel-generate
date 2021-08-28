@@ -1,9 +1,24 @@
+const borderTypes = [
+  'thin',
+  'dotted',
+  'dashDot',
+  'hair',
+  'dashDotDot',
+  'slantDashDot',
+  'mediumDashed',
+  'mediumDashDotDot',
+  'mediumDashDot',
+  'medium',
+  'double',
+  'thick'
+];
+
 export const getBorder = borderInfo => {
   const _borderDefinations = borderInfo.split(':');
   if (_borderDefinations[0].split(' ')[0] === 'all') {
     const _borderData = _borderDefinations[0].split(' ');
     if (_borderData?.length == 2) {
-      return ['thin', 'dotted', 'medium', 'double'].includes(_borderData[1])
+      return borderTypes.includes(_borderData[1])
         ? {
             top: { style: _borderData[1] },
             left: { style: _borderData[1] },
@@ -33,12 +48,7 @@ export const getBorder = borderInfo => {
           obj[_singleBorderDef[0]] = { color: 'black', style: 'thin' };
           break;
         case 2:
-          obj[_singleBorderDef[0]] = [
-            'thin',
-            'dotted',
-            'medium',
-            'double'
-          ].includes(_singleBorderDef[1])
+          obj[_singleBorderDef[0]] = borderTypes.includes(_singleBorderDef[1])
             ? { style: _singleBorderDef[1] }
             : { color: { argb: _singleBorderDef[1] }, style: 'thin' };
           break;

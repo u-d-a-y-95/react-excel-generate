@@ -75,4 +75,20 @@ File Structure
 
 
     AlignmentFormatString "
+    BorderFormatString : "all colorHexa  Border_Type
 
+
+    Border_Type : String 
+                  
+                1.thin
+                2.dotted
+                3.dashDot
+                4.hair
+                5.dashDotDot
+                6.slantDashDot
+                7.mediumDashed
+                8.mediumDashDotDot
+                9.mediumDashDot
+               10.medium
+               11.double
+               12.thick
