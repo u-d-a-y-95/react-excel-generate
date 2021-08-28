@@ -13,8 +13,15 @@ export const createFile = excel => {
   //generate sheets
   excel?.sheets?.forEach(sheet => {
     //create worksheet
+
     const _sheet = workbook.addWorksheet(sheet?.name ?? '', {
-      views: [{ showGridLines: sheet?.gridLine || true }]
+      views: [
+        {
+          showGridLines: sheet?.hasOwnProperty('gridLine')
+            ? sheet.gridLine
+            : true
+        }
+      ]
     });
 
     // generate rows
@@ -55,9 +62,11 @@ export const createFile = excel => {
       _addedRow.alignment = getAlignment({
         alignment: sheet?.alignment
       });
-      _addedRow.fill = getFill({
-        bgColor: sheet?.bgColor
-      });
+      _addedRow.fill =
+        sheet?.bgColor &&
+        getFill({
+          bgColor: sheet?.bgColor
+        });
       let _cellIndex = 0;
       lastCellIndex = 0;
       _addedRow.eachCell((cell, cellIndex) => {

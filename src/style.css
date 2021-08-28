@@ -1,3 +1,12 @@
 h1, p {
   font-family: Lato;
 }
+
+button {
+  margin: 5px;
+  border: none;
+  padding: 10px;
+  width: 100px;
+  background: #66a3ff;
+  color: white;
+}
