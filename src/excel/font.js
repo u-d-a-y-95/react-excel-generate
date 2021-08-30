@@ -10,7 +10,11 @@ export const getfontStyle = cell => {
 };
 
 export const getTextFormat = formatName => {
-  const format = { number: 0, text: '@' };
+  const format = {
+    number: '0',
+    text: '@',
+    date: 'mm/dd/yyyy'
+  };
   return formatName ? format[formatName] : '@';
 };
 export const getFill = cell => {

@@ -31,9 +31,12 @@ export const createFile = excel => {
 
       let lastCellIndex = 0;
       row?.forEach((cell, index) => {
-        if (typeof cell === 'string') {
-          if (cell.startsWith('_blank')) {
-            for (let i = 0; i < Number(cell.split('_blank*')[1]) - 1; i++) {
+        if (cell === null) {
+          cell = '';
+        }
+        if (typeof cell !== 'object') {
+          if (typeof cell === 'string' && cell?.startsWith('_blank')) {
+            for (let i = 0; i < Number(cell?.split('_blank*')[1]) - 1; i++) {
               const _addedRow = _sheet.addRow([]);
             }
           } else {
@@ -41,6 +44,10 @@ export const createFile = excel => {
             lastCellIndex += 1;
           }
         } else {
+          if (cell instanceof Date) {
+            _row[lastCellIndex + 1] = cell;
+            lastCellIndex += 1;
+          }
           _row[
             cell?.cellRange ? getIndex(cell?.cellRange[0]) : lastCellIndex + 1
           ] = cell?.text;
@@ -98,12 +105,19 @@ export const createFile = excel => {
 
             // add text format to the cell
             cell.numFmt = getTextFormat(row[_cellIndex]?.textFormat);
-
+            if (row[_cellIndex] instanceof Date) {
+              cell.numFmt = getTextFormat('date');
+            }
             lastCellIndex = row[_cellIndex]?.cellRange
               ? getIndex(row[_cellIndex]?.cellRange?.split(':')[1][0])
               : lastCellIndex + 1;
             _cellIndex++;
           } else {
+            if (typeof row[_cellIndex] === 'number') {
+              cell.numFmt = getTextFormat('number');
+            } else {
+              cell.numFmt = getTextFormat('text');
+            }
             lastCellIndex += 1;
             _cellIndex++;
           }
