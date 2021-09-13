@@ -13,7 +13,8 @@ export const getTextFormat = formatName => {
   const format = {
     number: '0',
     text: '@',
-    date: 'mm/dd/yyyy'
+    date: 'mm/dd/yyyy',
+    money: '#,##0.00'
   };
   return formatName ? format[formatName] : '@';
 };

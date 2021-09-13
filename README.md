@@ -36,7 +36,7 @@ File Structure
                   {
                       text: String,
                       bold: boolean,                                  // optional,    false
-                      itatlic: boolean,                               // optional,    false
+                      italic: boolean,                               // optional,    false
                       underline: boolean,                             // optional,    false
                       textFormat: String ,                            // optional,    Text
                       fontSize: Number ,                              // optional,    9
@@ -92,3 +92,10 @@ File Structure
                10.medium
                11.double
                12.thick
+
+  Text format : String 
+                number: '0',
+                text: '@',
+                date: 'mm/dd/yyyy',
+                money: '#,##0.00'
+  
