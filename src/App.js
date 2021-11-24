@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import { createFile } from './excel/index';
+import { generateJsonToExcel } from './excel/jsonToExcel';
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'A1:A2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Population(2000)',
@@ -35,7 +36,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'B1:B2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Population(2021)',
@@ -45,7 +46,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'C1:C2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Expected Population(2050)',
@@ -55,7 +56,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'D1:D2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Pop Growth (2000 - 2021)',
@@ -65,47 +66,47 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'E1:E2',
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     'China',
                     1268301605,
                     1444216107,
                     '1,329,570,095',
-                    new Date()
+                    new Date(),
                   ],
                   [
                     null,
                     '1,006,300,297',
                     '1,393,409,038',
                     '1,623,588,384',
-                    '38.5%'
+                    '38.5%',
                   ],
                   [
                     'United States',
                     '282,162,411',
                     '332,129,757',
                     '388,922,201',
-                    '17.7%'
+                    '17.7%',
                   ],
                   [
                     'Indonesia',
                     '214,090,575',
                     '276,361,783',
                     '318,393,046',
-                    '29.1%'
+                    '29.1%',
                   ],
                   [
                     'Pakistan',
                     '152,429,036',
                     '225,199,937',
                     '290,847,790',
-                    '47.7%'
-                  ]
-                ]
-              }
-            ]
+                    '47.7%',
+                  ],
+                ],
+              },
+            ],
           });
         }}
       >
@@ -129,21 +130,20 @@ export default function App() {
                       fontSize: 16,
                       alignment: 'center:middle',
                       cellRange: 'A1:M2',
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
-                      text:
-                        'Akij House, 198 Bir Uttam, Gulshan Link Road, Tejgaon, Dhaka-1208.',
+                      text: 'Akij House, 198 Bir Uttam, Gulshan Link Road, Tejgaon, Dhaka-1208.',
                       bold: true,
                       underline: true,
                       textFormat: 'text',
                       fontSize: 12,
                       alignment: 'center:middle',
                       cellRange: 'A1:M1',
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
@@ -153,7 +153,7 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:J1', // "A1:A3"
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Date : 23-Jun-2021',
@@ -162,8 +162,8 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'K1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
@@ -173,8 +173,8 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
@@ -183,19 +183,18 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
-                      text:
-                        'Gulshan Branch, SCB House, Level-1, 67, Gulshan Avenue, Dhaka-1212',
+                      text: 'Gulshan Branch, SCB House, Level-1, 67, Gulshan Avenue, Dhaka-1212',
                       textFormat: 'text',
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
@@ -206,8 +205,8 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
@@ -217,21 +216,20 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
-                      text:
-                        'We do hereby requesting you to make payment by transferring the amount to the respective Account Holder as shown below in detailed by debiting our CD Account No. 01114617101												',
+                      text: 'We do hereby requesting you to make payment by transferring the amount to the respective Account Holder as shown below in detailed by debiting our CD Account No. 01114617101												',
                       textFormat: 'text',
                       bold: true,
                       italic: true,
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     {
@@ -241,8 +239,8 @@ export default function App() {
                       fontSize: 9,
                       alignment: 'left:middle',
                       cellRange: 'A1:M1', // "A1:A3"
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   ['_blank*2'],
                   [
@@ -254,7 +252,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'A1:A2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Population(2000)',
@@ -264,7 +262,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'B1:B2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Population(2021)',
@@ -274,7 +272,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'C1:C2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Expected Population(2050)',
@@ -284,7 +282,7 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'D1:D2',
-                      merge: true
+                      merge: true,
                     },
                     {
                       text: 'Pop Growth (2000 - 2021)',
@@ -294,51 +292,85 @@ export default function App() {
                       textColor: 'ffffff',
                       bgColor: '666699',
                       cellRange: 'E1:E2',
-                      merge: true
-                    }
+                      merge: true,
+                    },
                   ],
                   [
                     'China',
                     '1,268,301,605',
                     '1,444,216,107',
                     '1,329,570,095',
-                    '13.8%'
+                    '13.8%',
                   ],
                   [
                     'India',
                     '1,006,300,297',
                     '1,393,409,038',
                     '1,623,588,384',
-                    '38.5%'
+                    '38.5%',
                   ],
                   [
                     'United States',
                     '282,162,411',
                     '332,129,757',
                     '388,922,201',
-                    '17.7%'
+                    '17.7%',
                   ],
                   [
                     'Indonesia',
                     '214,090,575',
                     '276,361,783',
                     '318,393,046',
-                    '29.1%'
+                    '29.1%',
                   ],
                   [
                     'Pakistan',
                     '152,429,036',
                     '225,199,937',
                     '290,847,790',
-                    '47.7%'
-                  ]
-                ]
-              }
-            ]
+                    '47.7%',
+                  ],
+                ],
+              },
+            ],
           });
         }}
       >
         Demo 2
+      </button>
+      <button
+        onClick={() => {
+          generateJsonToExcel(
+            [
+              {
+                text: 'Name',
+                textFormat: 'text',
+                alignment: 'center:middle',
+                key: 'name',
+              },
+              {
+                text: 'Age',
+                textFormat: 'text',
+                alignment: 'center:middle',
+                key: 'age',
+              },
+            ],
+            [
+              {
+                name: 'uday',
+                age: 25,
+                sex: 'male',
+              },
+              {
+                name: 'jahed',
+                age: 22,
+                sex: 'male',
+              },
+            ]
+          );
+        }}
+      >
+        Demo 3
       </button>
     </div>
   );
